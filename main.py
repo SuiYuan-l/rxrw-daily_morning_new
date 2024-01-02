@@ -165,4 +165,5 @@ if __name__ == '__main__':
 
   print("发送了" + str(count) + "条消息")
   print("文本：" + wordsStr)
+  print("内容：" + str(data))
 
