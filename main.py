@@ -12,6 +12,7 @@ today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
 start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
 birthday = os.getenv('BIRTHDAY')
+wordsStr = '比心'
 
 app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
@@ -72,7 +73,8 @@ def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
   if words.status_code != 200:
     return get_words()
-  return words.json()['data']['text']
+  wordsStr = words.json()['data']['text']
+  return wordsStr
 
 def format_temperature(temperature):
   return math.floor(temperature)
@@ -162,5 +164,5 @@ if __name__ == '__main__':
     exit(502)
 
   print("发送了" + str(count) + "条消息")
-  print("文本：" + data[words])
+  print("文本：" + wordsStr)
 
