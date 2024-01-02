@@ -12,7 +12,6 @@ today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
 start_date = os.getenv('START_DATE')
 city = os.getenv('CITY')
 birthday = os.getenv('BIRTHDAY')
-wordsStr = '比心'
 
 app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
@@ -147,7 +146,7 @@ data = {
     "value": get_birthday_left(),
     "color": get_random_color()
   },
-  "words": {
+  "jokes": {
     "value": get_words(),
     "color": get_random_color()
   },
@@ -164,6 +163,5 @@ if __name__ == '__main__':
     exit(502)
 
   print("发送了" + str(count) + "条消息")
-  print("文本：" + wordsStr)
   print("内容：" + str(data))
 
