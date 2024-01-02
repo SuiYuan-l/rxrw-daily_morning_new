@@ -126,15 +126,15 @@ data = {
     "color": get_random_color()
   },
   "temperature": {
-    "value": math.floor(weather['wendu']),
+    "value": weather['wendu'],
     "color": get_random_color()
   },
   "highest": {
-    "value": math.floor(weather['forecast'][0]['high']),
+    "value": weather['forecast'][0]['high'],
     "color": get_random_color()
   },
   "lowest": {
-    "value": math.floor(weather['forecast'][0]['low']),
+    "value": weather['forecast'][0]['low'],
     "color": get_random_color()
   },
   "love_days": {
