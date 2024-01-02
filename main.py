@@ -36,11 +36,11 @@ def get_weather():
   if city is None:
     print('请设置城市')
     return None
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
+  url = "http://t.weather.sojson.com/api/weather/city/101280802"
   res = requests.get(url).json()
   if res is None:
     return None
-  weather = res['data']['list'][0]
+  weather = res['data']['forecast'][0]['type']
   return weather
 
 # 获取当前日期为星期几
