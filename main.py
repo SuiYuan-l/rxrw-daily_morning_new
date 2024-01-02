@@ -40,7 +40,7 @@ def get_weather():
   res = requests.get(url).json()
   if res is None:
     return None
-  weather = res['data']['forecast'][0]
+  weather = res['data']
   return weather
 
 # 获取当前日期为星期几
@@ -106,35 +106,35 @@ data = {
     "color": get_random_color()
   },
   "weather": {
-    "value": weather['type'],
+    "value": weather['forecast'][0]['type'],
     "color": get_random_color()
   },
   "humidity": {
-    "value": weather['humidity'],
+    "value": weather['shidu'],
     "color": get_random_color()
   },
   "wind": {
-    "value": weather['wind'],
+    "value": weather['forecast'][0]['fl'],
     "color": get_random_color()
   },
   "air_data": {
-    "value": weather['airData'],
+    "value": weather['pm25'],
     "color": get_random_color()
   },
   "air_quality": {
-    "value": weather['airQuality'],
+    "value": weather['quality'],
     "color": get_random_color()
   },
   "temperature": {
-    "value": math.floor(weather['temp']),
+    "value": math.floor(weather['wendu']),
     "color": get_random_color()
   },
   "highest": {
-    "value": math.floor(weather['high']),
+    "value": math.floor(weather['forecast'][0]['high']),
     "color": get_random_color()
   },
   "lowest": {
-    "value": math.floor(weather['low']),
+    "value": math.floor(weather['forecast'][0]['low']),
     "color": get_random_color()
   },
   "love_days": {
